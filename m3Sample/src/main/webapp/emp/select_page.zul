@@ -1,0 +1,79 @@
+<?page title="" contentType="text/html;charset=UTF-8"?>
+
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk>
+	<window title="員工查詢" border="normal" width="100%" height="50%"
+		viewModel="@id('vm') @init('com.emp.viewModel.empSelectPage')"
+		apply="org.zkoss.bind.BindComposer">
+
+		<groupbox title="查詢">
+
+			<grid width="100%">
+
+				<columns>
+					<column hflex="1" />
+					<column hflex="2" />
+					<column hflex="1" />
+					<column hflex="2" />
+					<column hflex="1" />
+					<column hflex="2" />
+				</columns>
+
+				<rows>
+
+					<row>
+						<cell colspan="1">
+							<label value="員工編號"
+								style="font-size:20px">
+							</label>
+						</cell>
+
+						<cell>
+
+							<textbox width="80%"
+								value="@bind(vm.empSearchCondition.empno)" />
+
+
+						</cell>
+
+						<cell>
+							<label value="選擇員工編號" />
+						</cell>
+
+						<cell>
+
+							<combobox model="@load(vm.empList)" selectedItem="@bind(vm.empSearchCondition.empno)">
+
+								<template name="model"
+									autodrop="true" autocomplete="true">
+									<comboitem
+										label="@load(each.empno)"  />
+								</template>
+
+							</combobox>
+
+						</cell>
+
+
+					</row>
+					<row>
+						<cell colspan="6">
+							<button id="submitButton" label="Submit"
+								onClick="@command('queryEmpData')" />
+						</cell>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+
+
+
+
+
+
+
+
+
+	</window>
+</zk>

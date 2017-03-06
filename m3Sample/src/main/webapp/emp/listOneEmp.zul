@@ -1,0 +1,96 @@
+<?page title="員工查詢結果" contentType="text/html;charset=UTF-8"?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<zk>
+	<window title="員工查詢結果" border="normal" width="100%" height="50%"
+		viewModel="@id('vm') @init('com.emp.viewModel.empListOnePage')"
+		apply="org.zkoss.bind.BindComposer">
+
+		<hlayout>
+			<button src="/images/home_icon.png" />
+		</hlayout>
+
+		<groupbox>
+			<grid width="100%">
+
+				<columns>
+					<column width="130px" />
+					<column />
+					<column width="130px" />
+					<column />
+					<column width="130px" />
+					<column />
+				</columns>
+				<rows>
+					<row>
+						<cell>
+							<label value="員工編號"></label>
+						</cell>
+
+						<cell>
+							<textbox readonly="true"
+								value="@bind(vm.empVO.empno)" />
+						</cell>
+
+						<cell>
+							<label value="員工姓名"></label>
+						</cell>
+
+						<cell>
+							<textbox readonly="true"
+								value="@bind(vm.empVO.ename)" />
+						</cell>
+
+						<cell>
+							<label value="職位"></label>
+						</cell>
+
+						<cell>
+							<textbox readonly="true"
+								value="@bind(vm.empVO.job)" />
+						</cell>
+
+					</row>
+
+					<row>
+						<cell>
+							<label value="雇用日期"></label>
+						</cell>
+
+						<cell>
+							<textbox readonly="true"
+								value="@bind(vm.empVO.hiredate)" />
+						</cell>
+
+						<cell>
+							<label value="薪水"></label>
+						</cell>
+
+						<cell>
+							<textbox readonly="true"
+								value="@bind(vm.empVO.sal)" />
+						</cell>
+
+						<cell>
+							<label value="獎金"></label>
+						</cell>
+
+						<cell>
+							<textbox readonly="true"
+								value="@bind(vm.empVO.comm)" />
+						</cell>
+					</row>
+					<row>
+						<cell>
+							<label value="部門"></label>
+						</cell>
+
+						<cell>
+							<textbox readonly="true"
+								value="@bind(vm.empVO.deptno)" />
+						</cell>
+					</row>
+				</rows>
+			</grid>
+		</groupbox>
+	</window>
+</zk>
