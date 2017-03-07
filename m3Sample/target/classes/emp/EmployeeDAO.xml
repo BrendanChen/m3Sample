@@ -28,11 +28,11 @@
 	</resultMap>
 
 	<!-- 用員工編號查詢 -->
-	<select id="findByPrimaryKey" parameterType="com.emp.model.EmpSearchCondition"
+	<select id="findByPrimaryKey" parameterType="com.emp.model.EmpVO"
 		resultMap="empResultMap">
 		select *
 		from emp2
-		where empno = #{empno,jdbcType=INTEGER}
+		where empno = #{empno}
 	</select>
 
 	<!-- 查詢所有員工 -->
@@ -40,6 +40,39 @@
 		select *
 		from emp2
 	</select>
+
+	<!-- 新增員工 -->
+	<insert id="insert" parameterType="com.emp.model.EmpVO"
+		useGeneratedKeys="true" keyProperty="empno">
+
+		<selectKey keyProperty="empno" resultType="int" order="BEFORE">
+			SELECT emp2_seq.NEXTVAL FROM DUAL
+		</selectKey>
+
+
+		INSERT INTO emp2
+		(
+		empno,
+		ename,
+		job,
+		hiredate,
+		sal,
+		comm,
+		deptno
+		)
+
+		VALUES
+		(
+		#{empno},
+		#{ename},
+		#{job},
+		#{hiredate},
+		#{sal},
+		#{comm},
+		#{deptno}
+		)
+	</insert>
+
 
 
 </mapper>
