@@ -37,6 +37,17 @@ public class empSelectPage {
 
 	/** 員工List */
 	private List<EmpVO> empList;
+	
+	/** 員工編號list*/
+	private List<Integer> empnoList;
+
+	public List<Integer> getEmpnoList() {
+		return empnoList;
+	}
+
+	public void setEmpnoList(List<Integer> empnoList) {
+		this.empnoList = empnoList;
+	}
 
 	@Init
 	public void init() {
@@ -44,8 +55,14 @@ public class empSelectPage {
 		empSearchCondition = new EmpVO();
 
 		empVO = new EmpVO();
+		
+		empnoList = new ArrayList<Integer>();
 
 		empList = empService.getAll();
+		
+		for(EmpVO empData: empList){
+			empnoList.add(empData.getEmpno());
+		}
 
 	}
 	

@@ -37,31 +37,35 @@
 
 						</cell>
 
-						<cell>
-							<label value="選擇員工編號" />
-						</cell>
+<!-- 						<cell> -->
+<!-- 							<label value="選擇員工編號" /> -->
+<!-- 						</cell> -->
 
-						<cell>
+<!-- 						<cell> -->
 
-							<combobox model="@load(vm.empList)" selectedItem="@bind(vm.empSearchCondition.empno)">
+<!-- 							<combobox model="@load(vm.empnoList)" -->
+<!-- 								selectedItem="@bind(vm.empSearchCondition.empno)"> -->
 
-								<template name="model"
-									autodrop="true" autocomplete="true">
-									<comboitem
-										label="@load(each.empno)"  />
-								</template>
+<!-- 								<template name="model"> -->
+<!-- 									<comboitem -->
+<!-- 										label="@load(each)" /> -->
+<!-- 								</template> -->
 
-							</combobox>
+<!-- 							</combobox> -->
 
-						</cell>
-
+<!-- 						</cell> -->
 
 					</row>
 					<row>
 						<cell colspan="6">
 							<button id="submitButton" label="Submit"
 								onClick="@command('queryEmpData')" />
+								
+							<button id="submitBtn" label="Add" onClick='execution.sendRedirect("addEmp.zul")' />
 						</cell>
+						
+						
+						
 					</row>
 				</rows>
 			</grid>

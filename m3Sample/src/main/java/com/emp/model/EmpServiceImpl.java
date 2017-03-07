@@ -21,17 +21,17 @@ public class EmpServiceImpl implements EmpService{
 	
 	@Override
 	public void insert(EmpVO empVO) {
-		
+		employeeDAO.insert(empVO);
 	}
 
 	@Override
 	public void update(EmpVO empVO) {
-		
+		employeeDAO.update(empVO);
 	}
 
 	@Override
 	public void delete(Integer empno) {
-		
+		employeeDAO.delete(empno);
 	}
 
 	@Override

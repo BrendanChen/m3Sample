@@ -26,4 +26,13 @@ public interface EmployeeDAO {
 	public List<EmpVO> getAll();
 	
 	
+	/** 新增員工*/
+	public void insert(EmpVO empVO);
+	
+	
+	/** 修改員工資料*/
+	public void update(EmpVO empVO);
+	
+	/** 刪除員工資料*/
+	public void delete(Integer empno);
 }

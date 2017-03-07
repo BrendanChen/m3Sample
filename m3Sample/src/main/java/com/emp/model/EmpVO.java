@@ -11,6 +11,7 @@ import java.sql.Date;
 		private Double comm;
 		private Integer deptno;
 		
+		
 		public Integer getEmpno() {
 			return empno;
 		}
