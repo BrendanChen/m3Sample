@@ -3,16 +3,16 @@
 <?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
 
 <zk>
-	<window title="新增員工" border="normal" width="100%" height="50%"
-		viewModel="@id('vm') @init('com.emp.viewModel.addEmpPage')"
+	<window title="修改員工資料" border="normal" width="100%" height="50%"
+		viewModel="@id('vm') @init('com.emp.viewModel.updateEmpPage')"
 		apply="org.zkoss.bind.BindComposer">
-		
+
 		<hlayout>
-			<button label="return" onClick='execution.sendRedirect("/emp/select_page.zul")'/>
-<!-- 			<button label="revise" onClick="@command('updateEmpData')"/> -->
-			<button label="revise" onClick='execution.sendRedirect("/emp/.zul")'/>
+			<button label="return"
+				onClick='execution.sendRedirect("/emp/select_page.zul")' />
+			<button label="save" onClick="@command('saveEmpData')" />
 		</hlayout>
-		
+
 		<groupbox title="新增">
 
 			<grid width="100%">
@@ -38,7 +38,7 @@
 						<cell>
 
 							<textbox width="100%"
-								value="@bind(vm.empVO.ename)"/>
+								value="@bind(vm.empVO.ename)" />
 						</cell>
 						<cell colspan="1">
 							<label value="職稱" style="font-size:16px">
@@ -48,12 +48,12 @@
 						<cell>
 
 							<textbox width="100%"
-								value="@bind(vm.empVO.job)"/>
+								value="@bind(vm.empVO.job)" />
 						</cell>
 
 						就職日期
 						<datebox id="birthdayBox" hflex="1"
-							constraint="no empty,no future" value="@bind(vm.empVO.hiredate)"/>
+							constraint="no empty,no future" value="@bind(vm.empVO.hiredate)" />
 
 					</row>
 					<row>
@@ -90,10 +90,10 @@
 								value="@bind(vm.empVO.deptno)" />
 						</cell>
 					</row>
-					<row align="left">
-						<button id="submitBtn" label="Add" onClick="@command('addEmpData')" />
-					</row>
-					
+					<!-- 					<row align="left"> -->
+					<!-- 						<button id="submitBtn" label="" onClick="@command('addEmpData')" /> -->
+					<!-- 					</row> -->
+
 
 
 
