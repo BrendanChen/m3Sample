@@ -73,6 +73,22 @@
 		)
 	</insert>
 
+	<update id="update">
+		update emp2 set
+		empno = #{empno},
+		ename = #{ename},
+		job
+		= #{job},
+		hiredate = #{hiredate},
+		sal = #{sal},
+		comm = #{comm},
+		deptno =
+		#{deptno}
+		where empno = #{empno}
+	</update>
 
+	<delete id="delete">
+		delete from emp2 where empno = #{empno}
+	</delete>
 
 </mapper>

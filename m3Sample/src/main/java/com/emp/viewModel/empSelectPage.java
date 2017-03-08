@@ -68,6 +68,7 @@ public class empSelectPage {
 	
 	@Command
 	public void lookEmpData(@BindingParam("empVO") EmpVO empVO) {
+		
 		Map<String, Object> parameter = new HashMap<String, Object>();
 
 		Execution exection = Executions.getCurrent();

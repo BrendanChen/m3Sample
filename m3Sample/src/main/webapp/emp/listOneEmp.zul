@@ -6,7 +6,8 @@
 		apply="org.zkoss.bind.BindComposer">
 
 		<hlayout>
-			<button src="/images/home_icon.png" />
+			<button label="return" onClick='execution.sendRedirect("/emp/select_page.zul")'/>
+			<button label="revise" onClick="@command('turnToUpdatePage')"/>
 		</hlayout>
 
 		<groupbox>
