@@ -1,2 +1,4 @@
-# m3Sample
-Spring_myBatis_zk
+簡單Spring + MyBatis + Zk的範例
+
+
+
